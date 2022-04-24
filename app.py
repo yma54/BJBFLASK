@@ -11,22 +11,20 @@ def about():
     return render_template('about.html', pageTitle='About VTM')
 
 @app.route('/estimate', methods=['GET', 'POST'])
-def aestimate():
+def estimate():
     if request.method == 'POST':
         form = request.form
-        radius=float(form['Radius'])
+        radius=float(form['radius'])
         height=float(form['height'])
-        print(radius)
-        print(height)
-
+        
         pi=3.14
-        top=pi*radius**2
-        side=2*(pi*(radius*height))
-        area=top+side
+        
+        area=(pi*radius**2)+(2*(pi*(radius*height)))
         sqft=area/144
         part=sqft*25
         labor=sqft*15
         total=part+labor
+        estimate=total
 
 
 

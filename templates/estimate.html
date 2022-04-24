@@ -1,4 +1,5 @@
 {% extends 'base.html'%}{%block body%}
+
 <h1>Verticle Tank Maintainance VTM</h1>
 <hr/>
 <h3>VTM Price Estimator</h3>
@@ -9,7 +10,10 @@
     <lable for="Height">Height:</lable>
     <input type="number" id="Height" name="Height"/>
     <br/><br/>
-    <input type="submit" id="submit" Value="Submit"/>
+    <input type="submit" id="submit" Value="EstimatePrice"/>
     <input type="reset" value="Clean"/>
 </from>
-{% if estimate%}The estimate price for this job is ${{estimate}}{% endif %}{%endblock%}
+{% if estimate%}
+ The estimate price for this job is ${{estimate}}
+{% endif %}
+{%endblock%}
