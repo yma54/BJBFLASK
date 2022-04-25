@@ -13,9 +13,12 @@ def about():
 @app.route('/estimate', methods=['GET', 'POST'])
 def estimate():
     if request.method == 'POST':
+        print('postmethod')
         form = request.form
-        radius=float(form['radius'])
-        height=float(form['height'])
+        radius=float(form['Radius'])
+        height=float(form['Height'])
+        print(radius)
+        print(height)
         
         pi=3.14
         
@@ -24,19 +27,9 @@ def estimate():
         part=sqft*25
         labor=sqft*15
         total=part+labor
-        estimate=total
+        print(total)
 
-
-
-
-
-
-
-
-
-
-
-        return render_template('estimate.html',estimate=total)
+        return render_template('estimate.html',pageTitle='Estimate Price',estimate=total)
     return render_template('estimate.html')
     
 
