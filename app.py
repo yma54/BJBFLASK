@@ -32,6 +32,12 @@ def estimate():
         return render_template('estimate.html',pageTitle='Estimate Price',estimate=total)
     return render_template('estimate.html')
     
+def money(radius,height):
+    area=((3.14*radius**2)+(2*(3.14*(radius*height))))/144
+    price=area*40
+    return price
+    
+
 
 if __name__ == '__main__':
     app.run(debug=True)
